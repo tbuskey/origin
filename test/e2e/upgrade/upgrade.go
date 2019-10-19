@@ -32,6 +32,7 @@ import (
 
 func AllTests() []upgrades.Test {
 	return []upgrades.Test{
+		&controlplane.AvailableTest{},
 		&service.UpgradeTest{},
 		&upgrades.SecretUpgradeTest{},
 		&apps.ReplicaSetUpgradeTest{},
