@@ -123,17 +123,10 @@ func (t *UpgradeTest) Test(f *framework.Framework, done <-chan struct{}, upgrade
 			duration += i
 		}
 	}
-<<<<<<< HEAD
-	if duration > 60*time.Second {
-		framework.Failf("Service was unreachable during upgrade for at least %s:\n\n%s", duration.Truncate(time.Second), strings.Join(describe, "\n"))
-	} else if duration > 0 {
-		disruption.Flakef(f, "Service was unreachable during upgrade for at least %s:\n\n%s", duration.Truncate(time.Second), strings.Join(describe, "\n"))
-=======
 	if duration > 2*time.Second {
 		framework.Failf("Service was unreachable during upgrade for at least %s:\n\n%s", duration.Truncate(time.Second), strings.Join(describe, "\n"))
 	} else if duration > 0 {
 		framework.Logf("Service was unreachable during upgrade for at least %s:\n\n%s", duration.Truncate(time.Second), strings.Join(describe, "\n"))
->>>>>>> test: Add a service upgrade test that verifies availability
 	}
 
 	// verify finalizer behavior
