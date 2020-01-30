@@ -117,7 +117,7 @@ func (cma *chaosMonkeyAdapter) Test(sem *chaosmonkey.Semaphore) {
 			sem.Ready()
 		})
 	}
-	defer finalizeTest(start, cma.testReport, cma.framework)
+	defer finalizeTest(start, cma.testReport)
 	defer ready()
 	if skippable, ok := cma.test.(upgrades.Skippable); ok && skippable.Skip(cma.UpgradeContext) {
 		g.By("skipping test " + cma.test.Name())
