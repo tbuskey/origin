@@ -52,17 +52,10 @@ func (t *AvailableTest) Test(f *framework.Framework, done <-chan struct{}, upgra
 			duration += i
 		}
 	}
-<<<<<<< HEAD
 	if duration > 120*time.Second {
 		framework.Failf("API was unreachable during upgrade for at least %s:\n\n%s", duration.Truncate(time.Second), strings.Join(describe, "\n"))
 	} else if duration > 0 {
 		disruption.Flakef(f, "API was unreachable during upgrade for at least %s:\n\n%s", duration.Truncate(time.Second), strings.Join(describe, "\n"))
-=======
-	if duration > 30*time.Second {
-		framework.Failf("API was unreachable during upgrade for at least %s:\n\n%s", duration.Truncate(time.Second), strings.Join(describe, "\n"))
-	} else if duration > 0 {
-		framework.Logf("API was unreachable during upgrade for at least %s:\n\n%s", duration.Truncate(time.Second), strings.Join(describe, "\n"))
->>>>>>> test: Verify API remains available during upgrade
 	}
 }
 
