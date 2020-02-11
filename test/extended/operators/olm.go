@@ -245,9 +245,6 @@ var _ = g.Describe("[Feature:Platform] an end user use OLM", func() {
 				olmErrDescriptor = append(olmErrDescriptor, olmExplain)
 			}
 		}
-		//CHECK HASERRORS STATEMENT
-		// IF IT'S TRUE
-		//e2e.Failf(APPEND_ERRORS_VAR)
 		if olmErr != 0 {
 			// fmt.Printf("explain errors: %d\n", olmErr)
 			e2e.Failf("%v errors in explaining the following OLM descriptors: %v", olmErr, olmErrDescriptor)
